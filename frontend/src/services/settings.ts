@@ -9,7 +9,7 @@ export type Settings = {
 
 export const DEFAULT_SETTINGS: Settings = {
   LLM_MODEL: "gpt-4o",
-  AGENT: "CodeActAgent",
+  AGENT: "PlannerAgent",
   LANGUAGE: "en",
   LLM_API_KEY: "",
 };
