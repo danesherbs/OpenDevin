@@ -39,16 +39,7 @@ from opendevin.storage import FileStore, InMemoryFileStore
 
 
 def create_sandbox(sid: str = 'default', sandbox_type: str = 'local') -> Sandbox:
-    if sandbox_type == 'exec':
-        return DockerExecBox(sid=sid)
-    elif sandbox_type == 'local':
-        return LocalBox()
-    elif sandbox_type == 'ssh':
-        return DockerSSHBox(sid=sid)
-    elif sandbox_type == 'e2b':
-        return E2BBox()
-    else:
-        raise ValueError(f'Invalid sandbox type: {sandbox_type}')
+    return LocalBox()
 
 
 class Runtime:
