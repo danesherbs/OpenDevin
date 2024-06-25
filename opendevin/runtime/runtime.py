@@ -38,7 +38,7 @@ from opendevin.runtime.tools import RuntimeTool
 from opendevin.storage import FileStore, InMemoryFileStore
 
 
-def create_sandbox(sid: str = 'default', sandbox_type: str = 'exec') -> Sandbox:
+def create_sandbox(sid: str = 'default', sandbox_type: str = 'local') -> Sandbox:
     if sandbox_type == 'exec':
         return DockerExecBox(sid=sid)
     elif sandbox_type == 'local':
