@@ -109,7 +109,7 @@ class AgentConfig(metaclass=Singleton):
         memory_max_threads: The maximum number of threads indexing at the same time for embeddings.
     """
 
-    name: str = 'CodeActAgent'
+    name: str = 'PlannerAgent'
     memory_enabled: bool = False
     memory_max_threads: int = 2
 
