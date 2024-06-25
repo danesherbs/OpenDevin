@@ -58,7 +58,7 @@ async def read_file(path, workdir, start=0, end=-1) -> Observation:
         whole_path = resolve_path(path, workdir)
     except PermissionError:
         return ErrorObservation(
-            f"You're not allowed to access this path: {path}. You can only access paths inside the workspace."
+            f"You're not allowed to access this path: {path}. You can only access paths inside the workspace: {workdir}"
         )
 
     try:
