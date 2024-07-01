@@ -26,6 +26,7 @@ from opendevin.core.logger import opendevin_logger as logger
 from opendevin.core.main import main
 from opendevin.events.action import CmdRunAction, MessageAction
 from opendevin.events.serialization.event import event_to_dict
+from opendevin.runtime.docker.local_box import LocalBox
 from opendevin.runtime.docker.ssh_box import DockerSSHBox
 
 
@@ -144,7 +145,7 @@ def process_instance(
     # create sandbox and run the agent
     # =============================================
 
-    sandbox = DockerSSHBox()
+    sandbox = LocalBox()
     sandbox.execute(f'cd {inst_id}')
 
     init_cmd = instance.init
