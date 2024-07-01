@@ -12,7 +12,8 @@ def fake_user_response_fn(state: State) -> str:
 def run(agent: str) -> None:
     state: State = asyncio.run(
         main(
-            instruction="Hello!",
+            task_str="Hello!",
+            exit_on_message=False,
             fake_user_response_fn=fake_user_response_fn,
             sandbox=LocalBox(),
         )
