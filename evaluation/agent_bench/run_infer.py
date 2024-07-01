@@ -14,7 +14,7 @@ import docker
 from datasets import load_dataset
 from tqdm import tqdm
 
-from .helper import (
+from helper import (
     compare_results,
     create_sh_file,
     try_parse_answer,
