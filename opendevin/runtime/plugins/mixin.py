@@ -20,7 +20,7 @@ class SandboxProtocol(Protocol):
 
 
 def _source_bashrc(sandbox: SandboxProtocol):
-    exit_code, output = sandbox.execute('source /opendevin/bash.bashrc && source ~/.bashrc')
+    exit_code, output = sandbox.execute('. /opendevin/bash.bashrc && source ~/.bashrc')
     if exit_code != 0:
         raise RuntimeError(
             f'Failed to source /opendevin/bash.bashrc and ~/.bashrc with exit code {exit_code} and output: {output}'
