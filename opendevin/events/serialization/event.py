@@ -2,6 +2,7 @@ from dataclasses import asdict
 from datetime import datetime
 
 from opendevin.events import Event, EventSource
+from opendevin.events.observation.observation import Observation
 
 from .action import action_from_dict
 from .observation import observation_from_dict
@@ -60,6 +61,8 @@ def event_to_dict(event: 'Event') -> dict:
         props.pop(key, None)
     if 'action' in d:
         d['args'] = props
+        if event.timeout is not None:
+            d['timeout'] = event.timeout
     elif 'observation' in d:
         d['content'] = props.pop('content', '')
         d['extras'] = props
@@ -68,7 +71,7 @@ def event_to_dict(event: 'Event') -> dict:
     return d
 
 
-def event_to_memory(event: 'Event') -> dict:
+def event_to_memory(event: 'Event', max_message_chars: int) -> dict:
     d = event_to_dict(event)
     d.pop('id', None)
     d.pop('cause', None)
@@ -76,4 +79,20 @@ def event_to_memory(event: 'Event') -> dict:
     d.pop('message', None)
     if 'extras' in d:
         remove_fields(d['extras'], DELETE_FROM_MEMORY_EXTRAS)
+    if isinstance(event, Observation) and 'content' in d:
+        d['content'] = truncate_content(d['content'], max_message_chars)
     return d
+
+
+def truncate_content(content: str, max_chars: int) -> str:
+    """Truncate the middle of the observation content if it is too long."""
+    if len(content) <= max_chars:
+        return content
+
+    # truncate the middle and include a message to the LLM about it
+    half = max_chars // 2
+    return (
+        content[:half]
+        + '\n[... Observation truncated due to length ...]\n'
+        + content[-half:]
+    )

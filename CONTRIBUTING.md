@@ -1,18 +1,18 @@
 # Contributing
 
-Thanks for your interest in contributing to OpenDevin! We welcome and appreciate contributions. 
+Thanks for your interest in contributing to OpenDevin! We welcome and appreciate contributions.
 
 ## How Can I Contribute?
 
 There are many ways that you can contribute:
 
 1. **Download and use** OpenDevin, and send [issues](https://github.com/OpenDevin/OpenDevin/issues) when you encounter something that isn't working or a feature that you'd like to see.
-2. **Send feedback** after each session by [clicking the thumbs-up thumbs-down buttons](https://opendevin.github.io/OpenDevin/modules/usage/feedback), so we can see where things are working and failing, and also build an open dataset for training code agents.
+2. **Send feedback** after each session by [clicking the thumbs-up thumbs-down buttons](https://docs.all-hands.dev/modules/usage/feedback), so we can see where things are working and failing, and also build an open dataset for training code agents.
 3. **Improve the Codebase** by sending PRs (see details below). In particular, we have some [good first issue](https://github.com/OpenDevin/OpenDevin/labels/good%20first%20issue) issues that may be ones to start on.
 
 ## Understanding OpenDevin's CodeBase
 
-In order to understand the codebase, please refer to the README in each module:
+To understand the codebase, please refer to the README in each module:
 - [frontend](./frontend/README.md)
 - [agenthub](./agenthub/README.md)
 - [evaluation](./evaluation/README.md)
@@ -20,7 +20,7 @@ In order to understand the codebase, please refer to the README in each module:
     - [server](./opendevin/server/README.md)
 
 When you write code, it is also good to write tests. Please navigate to the `tests` folder to see existing test suites.
-At the moment, we have two kinds of tests: `unit` and `integration`. Please refer to the README for each test suite. These tests also run on github's continuous integration to ensure quality of the project.
+At the moment, we have two kinds of tests: `unit` and `integration`. Please refer to the README for each test suite. These tests also run on GitHub's continuous integration to ensure quality of the project.
 
 ## Sending Pull Requests to OpenDevin
 
@@ -77,13 +77,13 @@ git push origin my_branch
 
 ### 6. Open a Pull Request
 
-* On Github, go to the page of your forked repository, and create a Pull Request:
+* On GitHub, go to the page of your forked repository, and create a Pull Request:
    - Click on `Branches`
    - Click on the `...` beside your branch and click on `New pull request`
    - Set `base repository` to `OpenDevin/OpenDevin`
    - Set `base` to `main`
    - Click `Create pull request`
-  
+
 The PR should appear in [OpenDevin PRs](https://github.com/OpenDevin/OpenDevin/pulls).
 
 Then the OpenDevin team will review your code.
@@ -96,7 +96,7 @@ As described [here](https://github.com/commitizen/conventional-commit-types/blob
 - `feat`: A new feature
 - `fix`: A bug fix
 - `docs`: Documentation only changes
-- `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- `style`: Changes that do not affect the meaning of the code (white space, formatting, missing semicolons, etc.)
 - `refactor`: A code change that neither fixes a bug nor adds a feature
 - `perf`: A code change that improves performance
 - `test`: Adding missing tests or correcting existing tests
@@ -111,9 +111,6 @@ For example, a PR title could be:
 
 You may also check out previous PRs in the [PR list](https://github.com/OpenDevin/OpenDevin/pulls).
 
-As described [here](https://github.com/OpenDevin/OpenDevin/labels), we have created several labels. Every PR should be tagged with the corresponding labels.
-
 ### 2. Pull Request description
 - If your PR is small (such as a typo fix), you can go brief.
 - If it contains a lot of changes, it's better to write more details.
-

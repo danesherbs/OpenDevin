@@ -23,7 +23,7 @@ sidebar_position: 5
 ### 症状
 
 ```bash
-创建控制器时出错。请检查 Docker 是否正在运行，并访问 `https://opendevin.github.io/OpenDevin/modules/usage/troubleshooting` 获取更多调试信息。
+创建控制器时出错。请检查 Docker 是否正在运行，并访问 `https://docs.all-hands.dev/modules/usage/troubleshooting` 获取更多调试信息。
 ```
 
 ```bash
@@ -63,7 +63,6 @@ pexpect.pxssh.ExceptionPxssh: Could not establish connection to host
 * 确保拥有最新版本的 WSL 和 Docker
 * 检查您的 WSL 分发版也已更新
 * 尝试[此重新安装指南](https://github.com/OpenDevin/OpenDevin/issues/1156#issuecomment-2064549427)
-* 设置 `-e SANDBOX_TYPE=exec` 切换到 ExecBox Docker 容器
 
 ## 无法连接到 LLM
 
@@ -129,9 +128,9 @@ openai.NotFoundError: Error code: 404 - {'error': {'code': '404', 'message': 'Re
   * 如果您在 UI 中运行，请确保在设置模式中设置 `model`
   * 如果您通过 main.py 运行，请确保在环境变量/配置中设置 `LLM_MODEL`
 * 确保遵循了您的 LLM 提供商的任何特殊说明
-  * [Ollama](/OpenDevin/zh-Hans/modules/usage/llms/localLLMs)
-  * [Azure](/OpenDevin/zh-Hans/modules/usage/llms/azureLLMs)
-  * [Google](/OpenDevin/zh-Hans/modules/usage/llms/googleLLMs)
+  * [Ollama](/zh-Hans/modules/usage/llms/localLLMs)
+  * [Azure](/zh-Hans/modules/usage/llms/azureLLMs)
+  * [Google](/zh-Hans/modules/usage/llms/googleLLMs)
 * 确保您的 API 密钥正确无误
 * 尝试使用 `curl` 连接到 LLM
 * 尝试[直接通过 LiteLLM 连接](https://github.com/BerriAI/litellm)来测试您的设置

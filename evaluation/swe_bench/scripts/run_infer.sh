@@ -26,15 +26,23 @@ if [ -z "$MAX_ITER" ]; then
   MAX_ITER=30
 fi
 
+if [ -z "$USE_INSTANCE_IMAGE" ]; then
+  echo "USE_INSTANCE_IMAGE not specified, use default false"
+  USE_INSTANCE_IMAGE=false
+fi
+
+export USE_INSTANCE_IMAGE=$USE_INSTANCE_IMAGE
+echo "USE_INSTANCE_IMAGE: $USE_INSTANCE_IMAGE"
+
 get_agent_version
 
 echo "AGENT: $AGENT"
 echo "AGENT_VERSION: $AGENT_VERSION"
 echo "MODEL_CONFIG: $MODEL_CONFIG"
 
-# Default to use Hint
+# Default to NOT use Hint
 if [ -z "$USE_HINT_TEXT" ]; then
-  export USE_HINT_TEXT=true
+  export USE_HINT_TEXT=false
 fi
 echo "USE_HINT_TEXT: $USE_HINT_TEXT"
 EVAL_NOTE="$AGENT_VERSION"
